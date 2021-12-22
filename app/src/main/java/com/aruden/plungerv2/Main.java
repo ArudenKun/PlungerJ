@@ -9,10 +9,7 @@ import net.dv8tion.jda.api.requests.GatewayIntent;
 public class Main {
 
     private Main() throws LoginException {
-
-        String token = "ODg5NTE1MDU1NjE0NDAyNjgx.YUiXcw.39YU7zFzF4pIRRjsiILSokfMKl8";
-
-        JDABuilder.createDefault(token,
+        JDABuilder.createDefault(Config.get("TOKEN"),
             GatewayIntent.GUILD_MEMBERS,
             GatewayIntent.GUILD_MESSAGES
         )

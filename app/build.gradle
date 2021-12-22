@@ -34,7 +34,7 @@ dependencies {
     implementation group: 'com.jagrosh', name: 'jda-utilities', version: '3.0.5'
     implementation group: 'me.duncte123', name: 'botCommons', version: '2.3.9'
     implementation group: 'ch.qos.logback', name: 'logback-classic', version: '1.2.3'
-
+    implementation group: 'io.github.cdimascio', name: 'dotenv-java', version: '2.2.0'
 }
 
 compileJava.options.encoding = 'UTF-8'
