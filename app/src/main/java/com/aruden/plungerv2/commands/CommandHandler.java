@@ -8,6 +8,7 @@ import java.util.regex.Pattern;
 import javax.annotation.Nullable;
 
 import com.aruden.plungerv2.Config;
+import com.aruden.plungerv2.commands.general.Help;
 import com.aruden.plungerv2.commands.general.Ping;
 
 import net.dv8tion.jda.api.events.message.guild.GuildMessageReceivedEvent;
@@ -18,6 +19,7 @@ public class CommandHandler {
 
     public CommandHandler() {
         addCommand(new Ping() );
+        addCommand(new Help(this));
     }
 
     private void addCommand(ICommand cmd) {
@@ -32,7 +34,7 @@ public class CommandHandler {
     }
 
     @Nullable
-    private ICommand getCommand(String search) {
+    public ICommand getCommand(String search) {
 
         String searchLower = search.toLowerCase();
 
@@ -42,6 +44,10 @@ public class CommandHandler {
             }
         }
         return null;
+    }
+
+    public List<ICommand> getCommands() {
+        return commands;
     }
 
     public void handle(GuildMessageReceivedEvent event) {
