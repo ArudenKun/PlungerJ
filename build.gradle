@@ -14,7 +14,7 @@ plugins {
 
 mainClassName = 'com.aruden.plungerv2.Main'
 version '1.0'
-sourceCompatibility = JavaVersion.VERSION_17
+sourceCompatibility = 17
 
 repositories {
     maven {
