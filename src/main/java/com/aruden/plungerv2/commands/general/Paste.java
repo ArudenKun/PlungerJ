@@ -54,7 +54,7 @@ public class Paste implements ICommand {
 
     @Override
     public String getHelp() {
-        return "Creates a code paste on https://paste.menudocs.org/\n" +
+        return "Creates a paste on https://paste.menudocs.org/\n" +
                 "Usage: `!paste [language] [text]`";
     }
     
