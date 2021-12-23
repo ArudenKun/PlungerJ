@@ -2,6 +2,7 @@
 .gradle
 .vscode
 bin
+.env
 *.class
 # Ignore Gradle build output directory
 build
