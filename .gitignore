@@ -4,5 +4,6 @@
 bin
 .env
 *.class
+src\main\java\com\aruden\plungerv2\Config.java
 # Ignore Gradle build output directory
 build
