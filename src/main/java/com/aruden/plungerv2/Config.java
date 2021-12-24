@@ -1,12 +1,8 @@
 package com.aruden.plungerv2;
 
-import io.github.cdimascio.dotenv.Dotenv;
-
 public class Config {
     
-    private static final Dotenv DOTENV = Dotenv.load();
-
     public static String get(String key) {
-        return DOTENV.get(key.toUpperCase());
+        return System.getenv(key.toUpperCase());
     }
 }
