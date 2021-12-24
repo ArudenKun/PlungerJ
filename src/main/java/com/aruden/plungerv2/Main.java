@@ -13,12 +13,13 @@ public class Main {
 
         WebUtils.setUserAgent("My Name is Plunger");
 
-        JDABuilder.createDefault(Config.get("TOKEN"),
+        JDABuilder.createDefault(
+            Config.get("TOKEN"),
             GatewayIntent.GUILD_MEMBERS,
             GatewayIntent.GUILD_MESSAGES
         )
         .addEventListeners(new Listener())
-        .setActivity(Activity.watching("Plunger"))
+        .setActivity(Activity.watching("The Plungers"))
         .build();
     }
     public static void main(String[] args) throws LoginException {
