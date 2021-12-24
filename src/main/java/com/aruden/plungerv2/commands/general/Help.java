@@ -40,7 +40,7 @@ public class Help implements ICommand {
         ICommand command = handler.getCommand(search);
 
         if (command == null) {
-            channel.sendMessage("Nothing found for " + search).queue();
+            channel.sendMessage("Nothing found for `" + search + "`").queue();
             return; 
         }
 
@@ -55,7 +55,7 @@ public class Help implements ICommand {
     @Override
     public String getHelp() {
         return "Shows the usage for a that Command\n" +
-                "Usage: `!Help [command]`";
+                "Usage: `!help [command]`";
     }
     
     @Override

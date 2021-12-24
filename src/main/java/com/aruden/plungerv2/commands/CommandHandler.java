@@ -8,6 +8,8 @@ import java.util.regex.Pattern;
 import javax.annotation.Nullable;
 
 import com.aruden.plungerv2.Config;
+import com.aruden.plungerv2.commands.admin.Kick;
+import com.aruden.plungerv2.commands.general.Haste;
 import com.aruden.plungerv2.commands.general.Help;
 import com.aruden.plungerv2.commands.general.Paste;
 import com.aruden.plungerv2.commands.general.Ping;
@@ -19,9 +21,11 @@ public class CommandHandler {
     private final List<ICommand> commands = new ArrayList<>();
 
     public CommandHandler() {
-        addCommand(new Ping() );
+        addCommand(new Ping());
         addCommand(new Help(this));
         addCommand(new Paste());
+        addCommand(new Haste());
+        addCommand(new Kick());
     }
 
     private void addCommand(ICommand cmd) {
@@ -29,7 +33,7 @@ public class CommandHandler {
         boolean nameFound = commands.stream().anyMatch((it) -> it.getName().equalsIgnoreCase(cmd.getName()));
 
         if (nameFound) {
-            throw new IllegalArgumentException("This Command Already Exists");
+            throw new IllegalArgumentException("`This Command Already Exists`");
         }
 
         commands.add(cmd);
