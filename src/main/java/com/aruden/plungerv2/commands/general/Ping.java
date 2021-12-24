@@ -15,7 +15,11 @@ public class Ping implements ICommand {
             (ping) -> ctx.getChannel()
             .sendMessageFormat("REST Ping: %sms\nWS ping: %sms", ping, jda.getGatewayPing()).queue()
         );
-        
+        // JDA jda = ctx.getJDA();
+        // jda.getRestPing().queue(
+        //     (ping) -> ctx.getChannel()
+        //     .sendMessageEmbeds("REST Ping: %sms\nWS ping: %sms", ping, jda.getGatewayPing())
+        // );
     }
 
     @Override
@@ -25,6 +29,7 @@ public class Ping implements ICommand {
     
     @Override
     public String getHelp() {
-        return "Shows the ping of the bot to the discord server";
+        return "Shows the ping of the bot to the discord server\n " +
+                "Usage: `!ping`";
     }
 }
